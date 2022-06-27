@@ -1,0 +1,46 @@
+<div class="">
+    <h3 class="employeTable">Employee List</h3>
+    <table style="width:100%">
+      <tr class="topTable">
+        <th></th>
+        <th><input type="search" placeholder="search by name" (keyup)="searchName($event)"></th>
+        <th>
+          <select (change)="selectionChnage($event)">
+            <option value="" ></option>
+            <option  *ngFor="let item of optionValue" value="{{item}}">{{item}}</option>
+          </select>
+        </th>
+        <th><input type="search" placeholder="search by age" (keyup)="ageCheck($event.target)"></th>
+        <th></th>
+        <th></th>
+        <th >
+          <button (click)="addUser()">Add User</button>
+          <button (click)="clearValue()">Clear</button>
+        </th>
+      </tr>
+        <tr class="tabletRow">
+          <th>#</th>
+          <th>Name</th>
+          <th>Job Title</th>
+          <th>Age</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Action</th>
+        </tr>
+        <tr>
+          <td></td>
+        </tr>
+        <tr *ngFor="let data of tableData" >
+          <td>{{data.id}}</td>
+          <td>{{data.name}}</td>
+          <td>{{data.job_title}}</td>
+          <td>{{data.age}}</td>
+          <td>{{data.start_date}}</td>
+          <td>{{data.end_date==''? "Still Working" :data.end_date}}</td>
+          <td>
+            <span ><button (click)="editUser(data.id)">Edit</button></span>
+            <span ><button (click)="deleteUser(data.name)">Delete</button></span>
+          </td>
+        </tr>
+    </table>
+</div>

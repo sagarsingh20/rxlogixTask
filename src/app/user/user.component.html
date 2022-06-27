@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="">
+        <h3 class="employeUser"> {{buttonValue}} Details</h3>
+        <form [formGroup]="userForm" class="formUser" >
+            <div class="formUserClass">
+                <label>Name:</label><br>
+                <input type="text" class="form-control" formControlName="name">
+            </div>
+            <div class="formUserClass">
+                <label>Job Title:</label><br>
+                <input type="text" class="form-control" formControlName="job_title">
+            </div>
+            <div class="formUserClass">
+                <label>Age:</label><br>
+                <input type="text" class="form-control" formControlName="age">
+            </div>
+            <div class="formUserClass">
+                <label>Start Date:</label><br>
+                <input type="date" class="form-control" formControlName="start_date">
+            </div>
+            <div class="formUserClass">
+                <label>End Date:</label><br>
+                <input type="date" class="form-control" formControlName="end_date">
+            </div>
+            <div class="formUserClass">
+                <button class="btn btn-primary" (click)="postUpdate()">{{buttonValue}}</button>
+            </div>
+        </form>
+    </div>
+</div>
